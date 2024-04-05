@@ -1,0 +1,41 @@
+
+//protoc -I proto proto/sso/sso.proto --go_out=./gen/go/ --go_opt=paths=source_relative --go-grpc_out=./gen/go/ --go-grpc_opt=paths=source_relative
+
+syntax = "proto3";
+
+package Auth;
+
+option go_package = "evs.sso.v1;ssov1";
+
+
+service Auth{
+	rpc Register (RegisterRequest) returns (RegisterResponse);
+	rpc Login (LoginRequest) returns (LoginResponse);
+	rpc IsAdimin (IsAdiminRequest) returns (IsAdiminResponse);
+}
+
+message RegisterRequest{
+	string email = 1;
+	string password = 2;
+}
+
+message RegisterResponse{
+	int64 user_id = 1;
+}
+message LoginRequest{
+	string email = 1;
+	string password = 2;
+	int64 app_id = 3; // app to login to
+}
+message LoginResponse{
+	// ! user can see text in token!
+	string token = 1; // Auth TOKEN of the logged in user
+}
+message IsAdiminRequest{
+	int64 user_id = 1;
+
+}
+
+message IsAdiminResponse{
+	bool is_admin = 1;
+}
