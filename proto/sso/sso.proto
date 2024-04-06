@@ -4,6 +4,7 @@
 syntax = "proto3";
 
 package Auth;
+// import "google/protobuf/empty.proto";
 
 option go_package = "evs.sso.v1;ssov1";
 
@@ -38,4 +39,69 @@ message IsAdiminRequest{
 
 message IsAdiminResponse{
 	bool is_admin = 1;
+}
+
+message Banner {
+	string id = 1;
+	string name = 2;
+	repeated string tags = 3;
+	bool active = 4;
+	int32 revision = 5;
+	bytes image = 6;
+	// Другие поля баннера по необходимости
+}
+
+message Tag {
+	string id = 1;
+	string name = 2;
+	// Другие поля тега по необходимости
+}
+
+message Feature {
+	string id = 1;
+	string name = 2;
+	bool enabled = 3;
+	// Другие поля фичи по необходимости
+}
+
+message GetBannerRequest {
+	string token = 1;
+	string banner_id = 2;
+	bool use_last_revision = 3;
+}
+
+message GetBannerResponse {
+	Banner banner = 1;
+}
+
+message DisableBannerRequest {
+	string token = 1;
+	string banner_id = 2;
+	bool temporarily_disabled = 3;
+}
+
+message DeleteBannerRequest {
+	string banner_id = 1;
+	string token = 2;
+}
+message DeleteTagRequest {
+	string tag_id = 1;
+	string token = 2;
+}
+message GetTagsResponse {
+	repeated Tag tags = 1;
+}
+message GetFeaturesResponse {
+	repeated Feature features = 1;
+}
+service BannerService {
+	rpc GetBanner (GetBannerRequest) returns (GetBannerResponse);
+	rpc AddBanner (Banner) returns (Banner);
+	rpc UpdateBanner (Banner) returns (Banner);
+	rpc DeleteBanner (DeleteBannerRequest) returns (Banner);
+	// rpc GetTags (google.protobuf.Empty) returns (GetTagsResponse);
+	rpc AddTag (Tag) returns (Tag);
+	rpc UpdateTag (Tag) returns (Tag);
+	rpc DeleteTag (DeleteTagRequest) returns (Tag);
+	// rpc GetFeatures (google.protobuf.Empty) returns (GetFeaturesResponse);
 }

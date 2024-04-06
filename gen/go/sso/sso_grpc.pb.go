@@ -183,3 +183,317 @@ var Auth_ServiceDesc = grpc.ServiceDesc{
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "sso/sso.proto",
 }
+
+const (
+	BannerService_GetBanner_FullMethodName    = "/Auth.BannerService/GetBanner"
+	BannerService_AddBanner_FullMethodName    = "/Auth.BannerService/AddBanner"
+	BannerService_UpdateBanner_FullMethodName = "/Auth.BannerService/UpdateBanner"
+	BannerService_DeleteBanner_FullMethodName = "/Auth.BannerService/DeleteBanner"
+	BannerService_AddTag_FullMethodName       = "/Auth.BannerService/AddTag"
+	BannerService_UpdateTag_FullMethodName    = "/Auth.BannerService/UpdateTag"
+	BannerService_DeleteTag_FullMethodName    = "/Auth.BannerService/DeleteTag"
+)
+
+// BannerServiceClient is the client API for BannerService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+type BannerServiceClient interface {
+	GetBanner(ctx context.Context, in *GetBannerRequest, opts ...grpc.CallOption) (*GetBannerResponse, error)
+	AddBanner(ctx context.Context, in *Banner, opts ...grpc.CallOption) (*Banner, error)
+	UpdateBanner(ctx context.Context, in *Banner, opts ...grpc.CallOption) (*Banner, error)
+	DeleteBanner(ctx context.Context, in *DeleteBannerRequest, opts ...grpc.CallOption) (*Banner, error)
+	// rpc GetTags (google.protobuf.Empty) returns (GetTagsResponse);
+	AddTag(ctx context.Context, in *Tag, opts ...grpc.CallOption) (*Tag, error)
+	UpdateTag(ctx context.Context, in *Tag, opts ...grpc.CallOption) (*Tag, error)
+	DeleteTag(ctx context.Context, in *DeleteTagRequest, opts ...grpc.CallOption) (*Tag, error)
+}
+
+type bannerServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewBannerServiceClient(cc grpc.ClientConnInterface) BannerServiceClient {
+	return &bannerServiceClient{cc}
+}
+
+func (c *bannerServiceClient) GetBanner(ctx context.Context, in *GetBannerRequest, opts ...grpc.CallOption) (*GetBannerResponse, error) {
+	out := new(GetBannerResponse)
+	err := c.cc.Invoke(ctx, BannerService_GetBanner_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *bannerServiceClient) AddBanner(ctx context.Context, in *Banner, opts ...grpc.CallOption) (*Banner, error) {
+	out := new(Banner)
+	err := c.cc.Invoke(ctx, BannerService_AddBanner_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *bannerServiceClient) UpdateBanner(ctx context.Context, in *Banner, opts ...grpc.CallOption) (*Banner, error) {
+	out := new(Banner)
+	err := c.cc.Invoke(ctx, BannerService_UpdateBanner_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *bannerServiceClient) DeleteBanner(ctx context.Context, in *DeleteBannerRequest, opts ...grpc.CallOption) (*Banner, error) {
+	out := new(Banner)
+	err := c.cc.Invoke(ctx, BannerService_DeleteBanner_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *bannerServiceClient) AddTag(ctx context.Context, in *Tag, opts ...grpc.CallOption) (*Tag, error) {
+	out := new(Tag)
+	err := c.cc.Invoke(ctx, BannerService_AddTag_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *bannerServiceClient) UpdateTag(ctx context.Context, in *Tag, opts ...grpc.CallOption) (*Tag, error) {
+	out := new(Tag)
+	err := c.cc.Invoke(ctx, BannerService_UpdateTag_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *bannerServiceClient) DeleteTag(ctx context.Context, in *DeleteTagRequest, opts ...grpc.CallOption) (*Tag, error) {
+	out := new(Tag)
+	err := c.cc.Invoke(ctx, BannerService_DeleteTag_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// BannerServiceServer is the server API for BannerService service.
+// All implementations must embed UnimplementedBannerServiceServer
+// for forward compatibility
+type BannerServiceServer interface {
+	GetBanner(context.Context, *GetBannerRequest) (*GetBannerResponse, error)
+	AddBanner(context.Context, *Banner) (*Banner, error)
+	UpdateBanner(context.Context, *Banner) (*Banner, error)
+	DeleteBanner(context.Context, *DeleteBannerRequest) (*Banner, error)
+	// rpc GetTags (google.protobuf.Empty) returns (GetTagsResponse);
+	AddTag(context.Context, *Tag) (*Tag, error)
+	UpdateTag(context.Context, *Tag) (*Tag, error)
+	DeleteTag(context.Context, *DeleteTagRequest) (*Tag, error)
+	mustEmbedUnimplementedBannerServiceServer()
+}
+
+// UnimplementedBannerServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedBannerServiceServer struct {
+}
+
+func (UnimplementedBannerServiceServer) GetBanner(context.Context, *GetBannerRequest) (*GetBannerResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBanner not implemented")
+}
+func (UnimplementedBannerServiceServer) AddBanner(context.Context, *Banner) (*Banner, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddBanner not implemented")
+}
+func (UnimplementedBannerServiceServer) UpdateBanner(context.Context, *Banner) (*Banner, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateBanner not implemented")
+}
+func (UnimplementedBannerServiceServer) DeleteBanner(context.Context, *DeleteBannerRequest) (*Banner, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteBanner not implemented")
+}
+func (UnimplementedBannerServiceServer) AddTag(context.Context, *Tag) (*Tag, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddTag not implemented")
+}
+func (UnimplementedBannerServiceServer) UpdateTag(context.Context, *Tag) (*Tag, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateTag not implemented")
+}
+func (UnimplementedBannerServiceServer) DeleteTag(context.Context, *DeleteTagRequest) (*Tag, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteTag not implemented")
+}
+func (UnimplementedBannerServiceServer) mustEmbedUnimplementedBannerServiceServer() {}
+
+// UnsafeBannerServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to BannerServiceServer will
+// result in compilation errors.
+type UnsafeBannerServiceServer interface {
+	mustEmbedUnimplementedBannerServiceServer()
+}
+
+func RegisterBannerServiceServer(s grpc.ServiceRegistrar, srv BannerServiceServer) {
+	s.RegisterService(&BannerService_ServiceDesc, srv)
+}
+
+func _BannerService_GetBanner_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetBannerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BannerServiceServer).GetBanner(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BannerService_GetBanner_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BannerServiceServer).GetBanner(ctx, req.(*GetBannerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BannerService_AddBanner_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Banner)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BannerServiceServer).AddBanner(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BannerService_AddBanner_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BannerServiceServer).AddBanner(ctx, req.(*Banner))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BannerService_UpdateBanner_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Banner)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BannerServiceServer).UpdateBanner(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BannerService_UpdateBanner_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BannerServiceServer).UpdateBanner(ctx, req.(*Banner))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BannerService_DeleteBanner_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteBannerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BannerServiceServer).DeleteBanner(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BannerService_DeleteBanner_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BannerServiceServer).DeleteBanner(ctx, req.(*DeleteBannerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BannerService_AddTag_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Tag)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BannerServiceServer).AddTag(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BannerService_AddTag_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BannerServiceServer).AddTag(ctx, req.(*Tag))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BannerService_UpdateTag_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Tag)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BannerServiceServer).UpdateTag(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BannerService_UpdateTag_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BannerServiceServer).UpdateTag(ctx, req.(*Tag))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BannerService_DeleteTag_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteTagRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BannerServiceServer).DeleteTag(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: BannerService_DeleteTag_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BannerServiceServer).DeleteTag(ctx, req.(*DeleteTagRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// BannerService_ServiceDesc is the grpc.ServiceDesc for BannerService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var BannerService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "Auth.BannerService",
+	HandlerType: (*BannerServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "GetBanner",
+			Handler:    _BannerService_GetBanner_Handler,
+		},
+		{
+			MethodName: "AddBanner",
+			Handler:    _BannerService_AddBanner_Handler,
+		},
+		{
+			MethodName: "UpdateBanner",
+			Handler:    _BannerService_UpdateBanner_Handler,
+		},
+		{
+			MethodName: "DeleteBanner",
+			Handler:    _BannerService_DeleteBanner_Handler,
+		},
+		{
+			MethodName: "AddTag",
+			Handler:    _BannerService_AddTag_Handler,
+		},
+		{
+			MethodName: "UpdateTag",
+			Handler:    _BannerService_UpdateTag_Handler,
+		},
+		{
+			MethodName: "DeleteTag",
+			Handler:    _BannerService_DeleteTag_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "sso/sso.proto",
+}

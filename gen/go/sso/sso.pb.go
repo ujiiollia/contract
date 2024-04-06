@@ -329,6 +329,588 @@ func (x *IsAdiminResponse) GetIsAdmin() bool {
 	return false
 }
 
+type Banner struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id       string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name     string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Tags     []string `protobuf:"bytes,3,rep,name=tags,proto3" json:"tags,omitempty"`
+	Active   bool     `protobuf:"varint,4,opt,name=active,proto3" json:"active,omitempty"`
+	Revision int32    `protobuf:"varint,5,opt,name=revision,proto3" json:"revision,omitempty"`
+	Image    []byte   `protobuf:"bytes,6,opt,name=image,proto3" json:"image,omitempty"` // Другие поля баннера по необходимости
+}
+
+func (x *Banner) Reset() {
+	*x = Banner{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_sso_sso_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Banner) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Banner) ProtoMessage() {}
+
+func (x *Banner) ProtoReflect() protoreflect.Message {
+	mi := &file_sso_sso_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Banner.ProtoReflect.Descriptor instead.
+func (*Banner) Descriptor() ([]byte, []int) {
+	return file_sso_sso_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *Banner) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Banner) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *Banner) GetTags() []string {
+	if x != nil {
+		return x.Tags
+	}
+	return nil
+}
+
+func (x *Banner) GetActive() bool {
+	if x != nil {
+		return x.Active
+	}
+	return false
+}
+
+func (x *Banner) GetRevision() int32 {
+	if x != nil {
+		return x.Revision
+	}
+	return 0
+}
+
+func (x *Banner) GetImage() []byte {
+	if x != nil {
+		return x.Image
+	}
+	return nil
+}
+
+type Tag struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id   string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"` // Другие поля тега по необходимости
+}
+
+func (x *Tag) Reset() {
+	*x = Tag{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_sso_sso_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Tag) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Tag) ProtoMessage() {}
+
+func (x *Tag) ProtoReflect() protoreflect.Message {
+	mi := &file_sso_sso_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Tag.ProtoReflect.Descriptor instead.
+func (*Tag) Descriptor() ([]byte, []int) {
+	return file_sso_sso_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *Tag) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Tag) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+type Feature struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id      string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name    string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Enabled bool   `protobuf:"varint,3,opt,name=enabled,proto3" json:"enabled,omitempty"` // Другие поля фичи по необходимости
+}
+
+func (x *Feature) Reset() {
+	*x = Feature{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_sso_sso_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Feature) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Feature) ProtoMessage() {}
+
+func (x *Feature) ProtoReflect() protoreflect.Message {
+	mi := &file_sso_sso_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Feature.ProtoReflect.Descriptor instead.
+func (*Feature) Descriptor() ([]byte, []int) {
+	return file_sso_sso_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *Feature) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Feature) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *Feature) GetEnabled() bool {
+	if x != nil {
+		return x.Enabled
+	}
+	return false
+}
+
+type GetBannerRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Token           string `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	BannerId        string `protobuf:"bytes,2,opt,name=banner_id,json=bannerId,proto3" json:"banner_id,omitempty"`
+	UseLastRevision bool   `protobuf:"varint,3,opt,name=use_last_revision,json=useLastRevision,proto3" json:"use_last_revision,omitempty"`
+}
+
+func (x *GetBannerRequest) Reset() {
+	*x = GetBannerRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_sso_sso_proto_msgTypes[9]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetBannerRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetBannerRequest) ProtoMessage() {}
+
+func (x *GetBannerRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sso_sso_proto_msgTypes[9]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetBannerRequest.ProtoReflect.Descriptor instead.
+func (*GetBannerRequest) Descriptor() ([]byte, []int) {
+	return file_sso_sso_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *GetBannerRequest) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+func (x *GetBannerRequest) GetBannerId() string {
+	if x != nil {
+		return x.BannerId
+	}
+	return ""
+}
+
+func (x *GetBannerRequest) GetUseLastRevision() bool {
+	if x != nil {
+		return x.UseLastRevision
+	}
+	return false
+}
+
+type GetBannerResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Banner *Banner `protobuf:"bytes,1,opt,name=banner,proto3" json:"banner,omitempty"`
+}
+
+func (x *GetBannerResponse) Reset() {
+	*x = GetBannerResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_sso_sso_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetBannerResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetBannerResponse) ProtoMessage() {}
+
+func (x *GetBannerResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sso_sso_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetBannerResponse.ProtoReflect.Descriptor instead.
+func (*GetBannerResponse) Descriptor() ([]byte, []int) {
+	return file_sso_sso_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *GetBannerResponse) GetBanner() *Banner {
+	if x != nil {
+		return x.Banner
+	}
+	return nil
+}
+
+type DisableBannerRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Token               string `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	BannerId            string `protobuf:"bytes,2,opt,name=banner_id,json=bannerId,proto3" json:"banner_id,omitempty"`
+	TemporarilyDisabled bool   `protobuf:"varint,3,opt,name=temporarily_disabled,json=temporarilyDisabled,proto3" json:"temporarily_disabled,omitempty"`
+}
+
+func (x *DisableBannerRequest) Reset() {
+	*x = DisableBannerRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_sso_sso_proto_msgTypes[11]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DisableBannerRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DisableBannerRequest) ProtoMessage() {}
+
+func (x *DisableBannerRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sso_sso_proto_msgTypes[11]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DisableBannerRequest.ProtoReflect.Descriptor instead.
+func (*DisableBannerRequest) Descriptor() ([]byte, []int) {
+	return file_sso_sso_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *DisableBannerRequest) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+func (x *DisableBannerRequest) GetBannerId() string {
+	if x != nil {
+		return x.BannerId
+	}
+	return ""
+}
+
+func (x *DisableBannerRequest) GetTemporarilyDisabled() bool {
+	if x != nil {
+		return x.TemporarilyDisabled
+	}
+	return false
+}
+
+type DeleteBannerRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	BannerId string `protobuf:"bytes,1,opt,name=banner_id,json=bannerId,proto3" json:"banner_id,omitempty"`
+	Token    string `protobuf:"bytes,2,opt,name=token,proto3" json:"token,omitempty"`
+}
+
+func (x *DeleteBannerRequest) Reset() {
+	*x = DeleteBannerRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_sso_sso_proto_msgTypes[12]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteBannerRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteBannerRequest) ProtoMessage() {}
+
+func (x *DeleteBannerRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sso_sso_proto_msgTypes[12]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteBannerRequest.ProtoReflect.Descriptor instead.
+func (*DeleteBannerRequest) Descriptor() ([]byte, []int) {
+	return file_sso_sso_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *DeleteBannerRequest) GetBannerId() string {
+	if x != nil {
+		return x.BannerId
+	}
+	return ""
+}
+
+func (x *DeleteBannerRequest) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+type DeleteTagRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	TagId string `protobuf:"bytes,1,opt,name=tag_id,json=tagId,proto3" json:"tag_id,omitempty"`
+	Token string `protobuf:"bytes,2,opt,name=token,proto3" json:"token,omitempty"`
+}
+
+func (x *DeleteTagRequest) Reset() {
+	*x = DeleteTagRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_sso_sso_proto_msgTypes[13]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteTagRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteTagRequest) ProtoMessage() {}
+
+func (x *DeleteTagRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sso_sso_proto_msgTypes[13]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteTagRequest.ProtoReflect.Descriptor instead.
+func (*DeleteTagRequest) Descriptor() ([]byte, []int) {
+	return file_sso_sso_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *DeleteTagRequest) GetTagId() string {
+	if x != nil {
+		return x.TagId
+	}
+	return ""
+}
+
+func (x *DeleteTagRequest) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+type GetTagsResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Tags []*Tag `protobuf:"bytes,1,rep,name=tags,proto3" json:"tags,omitempty"`
+}
+
+func (x *GetTagsResponse) Reset() {
+	*x = GetTagsResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_sso_sso_proto_msgTypes[14]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetTagsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTagsResponse) ProtoMessage() {}
+
+func (x *GetTagsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sso_sso_proto_msgTypes[14]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTagsResponse.ProtoReflect.Descriptor instead.
+func (*GetTagsResponse) Descriptor() ([]byte, []int) {
+	return file_sso_sso_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *GetTagsResponse) GetTags() []*Tag {
+	if x != nil {
+		return x.Tags
+	}
+	return nil
+}
+
+type GetFeaturesResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Features []*Feature `protobuf:"bytes,1,rep,name=features,proto3" json:"features,omitempty"`
+}
+
+func (x *GetFeaturesResponse) Reset() {
+	*x = GetFeaturesResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_sso_sso_proto_msgTypes[15]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetFeaturesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetFeaturesResponse) ProtoMessage() {}
+
+func (x *GetFeaturesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sso_sso_proto_msgTypes[15]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetFeaturesResponse.ProtoReflect.Descriptor instead.
+func (*GetFeaturesResponse) Descriptor() ([]byte, []int) {
+	return file_sso_sso_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *GetFeaturesResponse) GetFeatures() []*Feature {
+	if x != nil {
+		return x.Features
+	}
+	return nil
+}
+
 var File_sso_sso_proto protoreflect.FileDescriptor
 
 var file_sso_sso_proto_rawDesc = []byte{
@@ -354,19 +936,91 @@ var file_sso_sso_proto_rawDesc = []byte{
 	0x72, 0x49, 0x64, 0x22, 0x2d, 0x0a, 0x10, 0x49, 0x73, 0x41, 0x64, 0x69, 0x6d, 0x69, 0x6e, 0x52,
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x19, 0x0a, 0x08, 0x69, 0x73, 0x5f, 0x61, 0x64,
 	0x6d, 0x69, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x07, 0x69, 0x73, 0x41, 0x64, 0x6d,
-	0x69, 0x6e, 0x32, 0xae, 0x01, 0x0a, 0x04, 0x41, 0x75, 0x74, 0x68, 0x12, 0x39, 0x0a, 0x08, 0x52,
-	0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x12, 0x15, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x2e, 0x52,
-	0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16,
-	0x2e, 0x41, 0x75, 0x74, 0x68, 0x2e, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x30, 0x0a, 0x05, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x12,
-	0x12, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x2e, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x13, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x2e, 0x4c, 0x6f, 0x67, 0x69, 0x6e,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x39, 0x0a, 0x08, 0x49, 0x73, 0x41, 0x64,
-	0x69, 0x6d, 0x69, 0x6e, 0x12, 0x15, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x2e, 0x49, 0x73, 0x41, 0x64,
-	0x69, 0x6d, 0x69, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x41, 0x75,
-	0x74, 0x68, 0x2e, 0x49, 0x73, 0x41, 0x64, 0x69, 0x6d, 0x69, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x42, 0x12, 0x5a, 0x10, 0x65, 0x76, 0x73, 0x2e, 0x73, 0x73, 0x6f, 0x2e, 0x76,
-	0x31, 0x3b, 0x73, 0x73, 0x6f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x69, 0x6e, 0x22, 0x8a, 0x01, 0x0a, 0x06, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x12, 0x0e, 0x0a,
+	0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a,
+	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d,
+	0x65, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x61, 0x67, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x09, 0x52,
+	0x04, 0x74, 0x61, 0x67, 0x73, 0x12, 0x16, 0x0a, 0x06, 0x61, 0x63, 0x74, 0x69, 0x76, 0x65, 0x18,
+	0x04, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x61, 0x63, 0x74, 0x69, 0x76, 0x65, 0x12, 0x1a, 0x0a,
+	0x08, 0x72, 0x65, 0x76, 0x69, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x05, 0x20, 0x01, 0x28, 0x05, 0x52,
+	0x08, 0x72, 0x65, 0x76, 0x69, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x14, 0x0a, 0x05, 0x69, 0x6d, 0x61,
+	0x67, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x05, 0x69, 0x6d, 0x61, 0x67, 0x65, 0x22,
+	0x29, 0x0a, 0x03, 0x54, 0x61, 0x67, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x47, 0x0a, 0x07, 0x46, 0x65,
+	0x61, 0x74, 0x75, 0x72, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x65, 0x6e, 0x61,
+	0x62, 0x6c, 0x65, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x08, 0x52, 0x07, 0x65, 0x6e, 0x61, 0x62,
+	0x6c, 0x65, 0x64, 0x22, 0x71, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x1b, 0x0a,
+	0x09, 0x62, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x08, 0x62, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x49, 0x64, 0x12, 0x2a, 0x0a, 0x11, 0x75, 0x73,
+	0x65, 0x5f, 0x6c, 0x61, 0x73, 0x74, 0x5f, 0x72, 0x65, 0x76, 0x69, 0x73, 0x69, 0x6f, 0x6e, 0x18,
+	0x03, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0f, 0x75, 0x73, 0x65, 0x4c, 0x61, 0x73, 0x74, 0x52, 0x65,
+	0x76, 0x69, 0x73, 0x69, 0x6f, 0x6e, 0x22, 0x39, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x42, 0x61, 0x6e,
+	0x6e, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x24, 0x0a, 0x06, 0x62,
+	0x61, 0x6e, 0x6e, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x41, 0x75,
+	0x74, 0x68, 0x2e, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x52, 0x06, 0x62, 0x61, 0x6e, 0x6e, 0x65,
+	0x72, 0x22, 0x7c, 0x0a, 0x14, 0x44, 0x69, 0x73, 0x61, 0x62, 0x6c, 0x65, 0x42, 0x61, 0x6e, 0x6e,
+	0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b,
+	0x65, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x12,
+	0x1b, 0x0a, 0x09, 0x62, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x08, 0x62, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x49, 0x64, 0x12, 0x31, 0x0a, 0x14,
+	0x74, 0x65, 0x6d, 0x70, 0x6f, 0x72, 0x61, 0x72, 0x69, 0x6c, 0x79, 0x5f, 0x64, 0x69, 0x73, 0x61,
+	0x62, 0x6c, 0x65, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x08, 0x52, 0x13, 0x74, 0x65, 0x6d, 0x70,
+	0x6f, 0x72, 0x61, 0x72, 0x69, 0x6c, 0x79, 0x44, 0x69, 0x73, 0x61, 0x62, 0x6c, 0x65, 0x64, 0x22,
+	0x48, 0x0a, 0x13, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1b, 0x0a, 0x09, 0x62, 0x61, 0x6e, 0x6e, 0x65, 0x72,
+	0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x62, 0x61, 0x6e, 0x6e, 0x65,
+	0x72, 0x49, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x22, 0x3f, 0x0a, 0x10, 0x44, 0x65, 0x6c,
+	0x65, 0x74, 0x65, 0x54, 0x61, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x15, 0x0a,
+	0x06, 0x74, 0x61, 0x67, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74,
+	0x61, 0x67, 0x49, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x22, 0x30, 0x0a, 0x0f, 0x47, 0x65,
+	0x74, 0x54, 0x61, 0x67, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x1d, 0x0a,
+	0x04, 0x74, 0x61, 0x67, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x09, 0x2e, 0x41, 0x75,
+	0x74, 0x68, 0x2e, 0x54, 0x61, 0x67, 0x52, 0x04, 0x74, 0x61, 0x67, 0x73, 0x22, 0x40, 0x0a, 0x13,
+	0x47, 0x65, 0x74, 0x46, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x29, 0x0a, 0x08, 0x66, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65, 0x73, 0x18,
+	0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x2e, 0x46, 0x65, 0x61,
+	0x74, 0x75, 0x72, 0x65, 0x52, 0x08, 0x66, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65, 0x73, 0x32, 0xae,
+	0x01, 0x0a, 0x04, 0x41, 0x75, 0x74, 0x68, 0x12, 0x39, 0x0a, 0x08, 0x52, 0x65, 0x67, 0x69, 0x73,
+	0x74, 0x65, 0x72, 0x12, 0x15, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x2e, 0x52, 0x65, 0x67, 0x69, 0x73,
+	0x74, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x41, 0x75, 0x74,
+	0x68, 0x2e, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x12, 0x30, 0x0a, 0x05, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x12, 0x12, 0x2e, 0x41, 0x75,
+	0x74, 0x68, 0x2e, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x13, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x2e, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x39, 0x0a, 0x08, 0x49, 0x73, 0x41, 0x64, 0x69, 0x6d, 0x69, 0x6e,
+	0x12, 0x15, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x2e, 0x49, 0x73, 0x41, 0x64, 0x69, 0x6d, 0x69, 0x6e,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x2e, 0x49,
+	0x73, 0x41, 0x64, 0x69, 0x6d, 0x69, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32,
+	0xce, 0x02, 0x0a, 0x0d, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x12, 0x3c, 0x0a, 0x09, 0x47, 0x65, 0x74, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x12, 0x16,
+	0x2e, 0x41, 0x75, 0x74, 0x68, 0x2e, 0x47, 0x65, 0x74, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x17, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x2e, 0x47, 0x65,
+	0x74, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x27, 0x0a, 0x09, 0x41, 0x64, 0x64, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x12, 0x0c, 0x2e, 0x41,
+	0x75, 0x74, 0x68, 0x2e, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x1a, 0x0c, 0x2e, 0x41, 0x75, 0x74,
+	0x68, 0x2e, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x12, 0x2a, 0x0a, 0x0c, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x12, 0x0c, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x2e,
+	0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x1a, 0x0c, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x2e, 0x42, 0x61,
+	0x6e, 0x6e, 0x65, 0x72, 0x12, 0x37, 0x0a, 0x0c, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x42, 0x61,
+	0x6e, 0x6e, 0x65, 0x72, 0x12, 0x19, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x2e, 0x44, 0x65, 0x6c, 0x65,
+	0x74, 0x65, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x0c, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x2e, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x12, 0x1e, 0x0a,
+	0x06, 0x41, 0x64, 0x64, 0x54, 0x61, 0x67, 0x12, 0x09, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x2e, 0x54,
+	0x61, 0x67, 0x1a, 0x09, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x2e, 0x54, 0x61, 0x67, 0x12, 0x21, 0x0a,
+	0x09, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x54, 0x61, 0x67, 0x12, 0x09, 0x2e, 0x41, 0x75, 0x74,
+	0x68, 0x2e, 0x54, 0x61, 0x67, 0x1a, 0x09, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x2e, 0x54, 0x61, 0x67,
+	0x12, 0x2e, 0x0a, 0x09, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x54, 0x61, 0x67, 0x12, 0x16, 0x2e,
+	0x41, 0x75, 0x74, 0x68, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x54, 0x61, 0x67, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x09, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x2e, 0x54, 0x61, 0x67,
+	0x42, 0x12, 0x5a, 0x10, 0x65, 0x76, 0x73, 0x2e, 0x73, 0x73, 0x6f, 0x2e, 0x76, 0x31, 0x3b, 0x73,
+	0x73, 0x6f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -381,27 +1035,54 @@ func file_sso_sso_proto_rawDescGZIP() []byte {
 	return file_sso_sso_proto_rawDescData
 }
 
-var file_sso_sso_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_sso_sso_proto_msgTypes = make([]protoimpl.MessageInfo, 16)
 var file_sso_sso_proto_goTypes = []interface{}{
-	(*RegisterRequest)(nil),  // 0: Auth.RegisterRequest
-	(*RegisterResponse)(nil), // 1: Auth.RegisterResponse
-	(*LoginRequest)(nil),     // 2: Auth.LoginRequest
-	(*LoginResponse)(nil),    // 3: Auth.LoginResponse
-	(*IsAdiminRequest)(nil),  // 4: Auth.IsAdiminRequest
-	(*IsAdiminResponse)(nil), // 5: Auth.IsAdiminResponse
+	(*RegisterRequest)(nil),      // 0: Auth.RegisterRequest
+	(*RegisterResponse)(nil),     // 1: Auth.RegisterResponse
+	(*LoginRequest)(nil),         // 2: Auth.LoginRequest
+	(*LoginResponse)(nil),        // 3: Auth.LoginResponse
+	(*IsAdiminRequest)(nil),      // 4: Auth.IsAdiminRequest
+	(*IsAdiminResponse)(nil),     // 5: Auth.IsAdiminResponse
+	(*Banner)(nil),               // 6: Auth.Banner
+	(*Tag)(nil),                  // 7: Auth.Tag
+	(*Feature)(nil),              // 8: Auth.Feature
+	(*GetBannerRequest)(nil),     // 9: Auth.GetBannerRequest
+	(*GetBannerResponse)(nil),    // 10: Auth.GetBannerResponse
+	(*DisableBannerRequest)(nil), // 11: Auth.DisableBannerRequest
+	(*DeleteBannerRequest)(nil),  // 12: Auth.DeleteBannerRequest
+	(*DeleteTagRequest)(nil),     // 13: Auth.DeleteTagRequest
+	(*GetTagsResponse)(nil),      // 14: Auth.GetTagsResponse
+	(*GetFeaturesResponse)(nil),  // 15: Auth.GetFeaturesResponse
 }
 var file_sso_sso_proto_depIdxs = []int32{
-	0, // 0: Auth.Auth.Register:input_type -> Auth.RegisterRequest
-	2, // 1: Auth.Auth.Login:input_type -> Auth.LoginRequest
-	4, // 2: Auth.Auth.IsAdimin:input_type -> Auth.IsAdiminRequest
-	1, // 3: Auth.Auth.Register:output_type -> Auth.RegisterResponse
-	3, // 4: Auth.Auth.Login:output_type -> Auth.LoginResponse
-	5, // 5: Auth.Auth.IsAdimin:output_type -> Auth.IsAdiminResponse
-	3, // [3:6] is the sub-list for method output_type
-	0, // [0:3] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	6,  // 0: Auth.GetBannerResponse.banner:type_name -> Auth.Banner
+	7,  // 1: Auth.GetTagsResponse.tags:type_name -> Auth.Tag
+	8,  // 2: Auth.GetFeaturesResponse.features:type_name -> Auth.Feature
+	0,  // 3: Auth.Auth.Register:input_type -> Auth.RegisterRequest
+	2,  // 4: Auth.Auth.Login:input_type -> Auth.LoginRequest
+	4,  // 5: Auth.Auth.IsAdimin:input_type -> Auth.IsAdiminRequest
+	9,  // 6: Auth.BannerService.GetBanner:input_type -> Auth.GetBannerRequest
+	6,  // 7: Auth.BannerService.AddBanner:input_type -> Auth.Banner
+	6,  // 8: Auth.BannerService.UpdateBanner:input_type -> Auth.Banner
+	12, // 9: Auth.BannerService.DeleteBanner:input_type -> Auth.DeleteBannerRequest
+	7,  // 10: Auth.BannerService.AddTag:input_type -> Auth.Tag
+	7,  // 11: Auth.BannerService.UpdateTag:input_type -> Auth.Tag
+	13, // 12: Auth.BannerService.DeleteTag:input_type -> Auth.DeleteTagRequest
+	1,  // 13: Auth.Auth.Register:output_type -> Auth.RegisterResponse
+	3,  // 14: Auth.Auth.Login:output_type -> Auth.LoginResponse
+	5,  // 15: Auth.Auth.IsAdimin:output_type -> Auth.IsAdiminResponse
+	10, // 16: Auth.BannerService.GetBanner:output_type -> Auth.GetBannerResponse
+	6,  // 17: Auth.BannerService.AddBanner:output_type -> Auth.Banner
+	6,  // 18: Auth.BannerService.UpdateBanner:output_type -> Auth.Banner
+	6,  // 19: Auth.BannerService.DeleteBanner:output_type -> Auth.Banner
+	7,  // 20: Auth.BannerService.AddTag:output_type -> Auth.Tag
+	7,  // 21: Auth.BannerService.UpdateTag:output_type -> Auth.Tag
+	7,  // 22: Auth.BannerService.DeleteTag:output_type -> Auth.Tag
+	13, // [13:23] is the sub-list for method output_type
+	3,  // [3:13] is the sub-list for method input_type
+	3,  // [3:3] is the sub-list for extension type_name
+	3,  // [3:3] is the sub-list for extension extendee
+	0,  // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_sso_sso_proto_init() }
@@ -482,6 +1163,126 @@ func file_sso_sso_proto_init() {
 				return nil
 			}
 		}
+		file_sso_sso_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Banner); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_sso_sso_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Tag); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_sso_sso_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Feature); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_sso_sso_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetBannerRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_sso_sso_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetBannerResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_sso_sso_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DisableBannerRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_sso_sso_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteBannerRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_sso_sso_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteTagRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_sso_sso_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetTagsResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_sso_sso_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetFeaturesResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -489,9 +1290,9 @@ func file_sso_sso_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_sso_sso_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   16,
 			NumExtensions: 0,
-			NumServices:   1,
+			NumServices:   2,
 		},
 		GoTypes:           file_sso_sso_proto_goTypes,
 		DependencyIndexes: file_sso_sso_proto_depIdxs,
